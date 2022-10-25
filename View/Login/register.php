@@ -9,16 +9,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
     <link href="./CSS/login.style.css" rel="stylesheet">
-    <script src="./JS/login.js"></script>
-    <title>Login</title>
+    <script src="./JS/register.js"></script>
+    <title>Register</title>
 </head>
 <body style="background-color: #eee;">
 
+<div class="mh-100">
 <section class="h-100 gradient-form mt-5">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-xl-10">
-        <div class="card rounded-3 text-black">
+        <div class="card rounded-3 text-black mb-5">
           <div class="row g-0">
             <div class="col-lg-6">
               <div class="card-body p-md-5 mx-md-4">
@@ -30,24 +31,34 @@
                 </div>
 
                 <form>
-                  <p>Favor de iniciar sesión</p>
+                  <p>Favor de registrarse</p>
 
                   <div class="form-outline mb-4">
-                    <label class="form-label" for="form2Example11">Usuario/Correo</label>
-                    <input type="text" id="usuario" name="usuario" class="form-control" />
-                  </div>
+                    <label class="form-label" for="usuario">Usuario</label>
+                    <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Usuario..." />
 
-                  <div class="form-outline mb-4">
-                  <label class="form-label" for="form2Example22">Constraseña</label>
+                    <label class="form-label" for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre..." />
+
+                    <label class="form-label" for="email">Correo</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Correo..." />
+
+                    <label class="form-label" for="contra">Constraseña</label>
                     <input type="password" id="contra" name="contra" class="form-control" />
+
+                    <label class="form-label" for="contra2">Confirmar contraseña</label>
+                    <input type="password" id="contra2" name="contra2" class="form-control" />
+
+                    <label class="form-label" for="telefono">Teléfono</label>
+                    <input type="text" id="telefono" name="telefono" class="form-control" />
                   </div>
 
                   <div class="text-center pt-1 pb-1">
-                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2" id="btnLogin" name="btnLogin" type="button">Acceder</button>
+                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2" id="btnRegister" name="btnRegister" type="button">Registrar</button>
                   </div>
 
                   <div class="text-center">
-                    <p>¿No tienes cuenta aún? <a href="http://localhost/CarniceriaWeb/register.php">Regístrate</a></p>
+                    <p>¿Ya tienes una cuenta? <a href="http://localhost/CarniceriaWeb/login.php">Inicia sesión</a></p>
                   </div>
 
                 </form>
@@ -56,8 +67,9 @@
             </div>
             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
               <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                <h4 class="mb-4">!Bienvenido de vuelta!</h4>
-                <p class="small mb-0">Las mejores carnes y la mejor experiencia te esperan.</p>
+                <h4 class="mb-4">Somos más que una carnicería</h4>
+                <p class="small mb-0">Conoce los mejores productos de la ciudad en carnes, contando con una gran 
+                    variedad de artículos, !disponemos de todo lo que necesitas para cumplir tus antojos!.<i class="fa fa-toggle-down" aria-hidden="true"></i>.</p>
               </div>
             </div>
           </div>
@@ -66,6 +78,7 @@
     </div>
   </div>
 </section>
+</div>
 
 </body>
 </html>

@@ -17,11 +17,11 @@ class usuario_model {
         $result->execute(array(":usuario" => $usuario, ":nombre" => $nombre, ":email" => $email, ":contra" => $contra, ":telefono" => $telefono));
     }
 
-    public function signIn($usuario, $contra) {
+    public function signIn($usuario, $email, $contra) {
         $this->usuarios_model = array();
-        $sql = "select * from usuario where usuario = :usuario and contra = :contra";
+        $sql = "select * from usuario where (usuario = :usuario or email = :email) and contra = :contra";
         $result = $this->db->prepare($sql);
-        $result->execute(array(":usuario" => $usuario, ":contra" => $contra));
+        $result->execute(array(":usuario" => $usuario, ":email" => $email, ":contra" => $contra));
         while ($filas = $result->fetch(PDO::FETCH_ASSOC)) {
             $this->usuarios_model[] = $filas;
         }

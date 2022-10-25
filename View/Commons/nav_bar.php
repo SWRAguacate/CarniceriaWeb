@@ -54,9 +54,9 @@
   <hr />
   <div class="offcanvas-body">
     <div class="list-group" id="list-tab" role="tablist">
-      <a class="list-group-item list-group-item-action" id="list-settings-list" (click)="goLogin()" data-toggle="list"
+      <a class="list-group-item list-group-item-action" id="list-settings-list" href="http://localhost/CarniceriaWeb/login.php" data-toggle="list"
         role="tab" aria-controls="Login" *ngIf="!bLogeado">Login</a>
-      <a class="list-group-item list-group-item-action" id="list-settings-list" (click)="Logout()" data-toggle="list"
+      <a class="list-group-item list-group-item-action" id="list-settings-list" href="http://localhost/CarniceriaWeb/Petitions/sign_out.petition.php" data-toggle="list"
         role="tab" aria-controls="Logout" *ngIf="bLogeado">Logout</a>
     </div>
   </div>

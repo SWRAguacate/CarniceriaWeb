@@ -25,7 +25,7 @@
 </head>
 <body>
     <?php
-        require ("Controller/index.controller.php");
+        require ("Controller/register.controller.php");
     ?>
 </body>
 </html>

@@ -7,11 +7,11 @@ if(isset($_POST["petition"])) {
     $usuario = $_POST["usuario"];
     $contra = $_POST["contra"];
 
-    $user = $_usuario->signIn($usuario, $contra);
+    $user = $_usuario->signIn($usuario, $usuario, $contra);
 
     if (Count($user) != 0) {
         session_start();
-        $_SESSION["usuario_logueado"] = $user;
+        $_SESSION['usuario_logueado'] = $user;
         echo (1);
     } else {
         echo (0);
