@@ -34,10 +34,10 @@ class usuario_model {
         . "nombre = IFNULL (:nombre, nombre)," 
         . "email = IFNULL (:email, email)," 
         . "contra = IFNULL (:contra, contra)," 
-        . "telefono = IFNULL (:telefono, telefono),"
+        . "telefono = IFNULL (:telefono, telefono) "
         . "where id_usuario = :id_usuario";
         $result = $this->db->prepare($sql);
-        $result->execute(array(":id_usuario" => $id, ":id_usuario" => $id, ":usuario" => $usuario, ":nombre" => $nombre, ":email" => $email, ":contra" => $contra, ":telefono" => $telefono));
+        $result->execute(array(":usuario" => $usuario, ":nombre" => $nombre, ":email" => $email, ":contra" => $contra, ":telefono" => $telefono, ":id_usuario" => $id));
     }
     
     public function validateUser($usuario, $email) {

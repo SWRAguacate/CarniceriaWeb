@@ -12,7 +12,7 @@ $(document).ready(function() {
                     nombre: $('#nombre').val(),
                     email: $('#email').val(),
                     contra: $('#contra').val(),
-                    telefono: $('#telefono').val()
+                    telefono: parseInt($('#telefono').val())
                 },
                 success: function(result){
                     console.log(result);

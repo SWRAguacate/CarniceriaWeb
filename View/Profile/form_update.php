@@ -8,6 +8,7 @@
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+    <script src="./JS/profile.js"></script>
     <title>Editar Usuario</title>
 </head>
 <body style="background-color: #eee;">
@@ -16,29 +17,33 @@
         <br><br><br>
         <form>
             <p>Perfil de usuario</p>
+            <input type="text" id="id_usuario" name="id_usuario" value="<?php echo $id_usuario ?>" hidden />
 
             <div class="form-outline mb-4">
             <label class="form-label" for="usuario">Usuario</label>
-            <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Usuario..." />
+            <input type="text" id="usuario" name="usuario" value="<?php echo $username ?>" class="form-control" placeholder="Usuario..." />
+            <input type="text" id="usuarioOriginal" name="usuarioOriginal" value="<?php echo $username ?>" hidden />
 
             <label class="form-label" for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre..." />
+            <input type="text" id="nombre" name="nombre" value="<?php echo $nombre ?>" class="form-control" placeholder="Nombre..." />
 
             <label class="form-label" for="email">Correo</label>
-            <input type="email" id="email" name="email" class="form-control" placeholder="Correo..." />
+            <input type="email" id="email" name="email" value="<?php echo $email ?>" class="form-control" placeholder="Correo..." />
+            <input type="text" id="emailOriginal" name="emailOriginal" value="<?php echo $email ?>" hidden />
 
             <label class="form-label" for="contra">Constraseña</label>
-            <input type="password" id="contra" name="contra" class="form-control" />
+            <input type="password" id="contra" name="contra" value="<?php echo $contra ?>" class="form-control" />
+            <input type="text" id="contraOriginal" name="contraOriginal" value="<?php echo $contra ?>" hidden />
 
             <label class="form-label" for="contra2">Confirmar contraseña</label>
             <input type="password" id="contra2" name="contra2" class="form-control" />
 
             <label class="form-label" for="telefono">Teléfono</label>
-            <input type="text" id="telefono" name="telefono" class="form-control" />
+            <input type="text" id="telefono" name="telefono" value="<?php echo $telefono ?>" class="form-control" />
             </div>
 
             <div class="text-center pt-1 pb-1">
-                <button class="btn btn-primary btn-block fa-lg gradient-custom-2" id="btnRegister" name="btnRegister" type="button">Actualizar</button>
+                <button class="btn btn-primary btn-block fa-lg gradient-custom-2" id="btnUpdate" name="btnUpdate" type="button">Actualizar usuario</button>
             </div>
         </form>
     </div>
