@@ -18,6 +18,8 @@ $(document).ready(function() {
                     console.log(result);
                     if(result == 1){
                         toastr.success('Usuario registrado');
+                        alert('Usuario registrado');
+                        window.location.href = "http://localhost/CarniceriaWeb/index.php";
                     } else {
                         toastr.error('Usuario y/o correo en uso');
                     }

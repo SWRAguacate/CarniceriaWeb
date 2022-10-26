@@ -2,5 +2,5 @@
 
 session_start();
 session_destroy();
-header('Location: ../index.php');
+echo "<script> alert('Sesión cerrada'); window.location.href='../index.php'; </script>";
 die();

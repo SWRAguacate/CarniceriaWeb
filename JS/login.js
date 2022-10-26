@@ -14,6 +14,8 @@ $(document).ready(function() {
                 console.log(result);
                 if(result == 1){
                     toastr.success('Usuario logueado');
+                    alert('Usuario logueado');
+                    window.location.href = "http://localhost/CarniceriaWeb/index.php";
                 } else {
                     toastr.error('Combinación incorrecta');
                 }
