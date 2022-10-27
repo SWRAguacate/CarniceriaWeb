@@ -9,10 +9,17 @@ if(isset($_POST["petition"])) {
     $kilos = $_POST["kilos"];
     $tipo = $_POST["tipo"];
     $precio_unitario = $_POST["precio_unitario"];
+    $porcentajeDescuento = $_POST["descuento"];
 
     if($tipo == 0){
+        $descuentoDecimal = $porcentajeDescuento/100;
+        $descuento = $precio_unitario * $descuentoDecimal;
+        $precio_unitario = $precio_unitario - $descuento;
         $precio_final = $precio_unitario * $unidades;
     } else {
+        $descuentoDecimal = $porcentajeDescuento/100;
+        $descuento = $precio_unitario * $descuentoDecimal;
+        $precio_unitario = $precio_unitario - $descuento;
         $precio_final = $precio_unitario * $kilos;
     }
 

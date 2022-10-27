@@ -7,8 +7,8 @@
     <title>Presentation</title>
 </head>
 <body>
-
-<div class="bg-secondary mt-5 bg-opacity-75">
+<div class="container border-0" style="background: #6C757DBF; height: 50px; max-width: 100%;"></div>
+<div class="bg-secondary bg-opacity-75">
     <div class="container">
       <div class="card bg-transparent border-0 pt-5 text-white">
         <h1>¡Encuentra los mejores productos en nuestra tienda!</h1>
@@ -32,14 +32,13 @@
         <div class="col">
           <div class="input-group">
             <span class="input-group-text">Categoría</span>
-            <select class="form-select" id="categorieSelect" (change)="onBrandChange($event.target)">
+            <select class="form-select" id="categorieSelect">
               <option value="" selected>...</option>
-              <option *ngFor="let brand of brandsArray;" value="{{brand._id}}">{{brand.nombre}}</option>
             </select>
           </div>
         </div>
         <div class="col">
-          <button class="btn btn-danger" (click)="searchProducts()"> Buscar </button>
+          <button class="btn btn-danger"> Buscar </button>
         </div>
       </div>
     </div>

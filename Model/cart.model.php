@@ -26,7 +26,7 @@ class cart_model {
 
     public function getCartId($id_usuario) {
         $this->carts_model = array();
-        $sql = "select id_carrito from carrito where id_usuario = :id_usuario";
+        $sql = "select * from carrito where id_usuario = :id_usuario";
         $result = $this->db->prepare($sql);
         $result->execute(array(":id_usuario" => $id_usuario));
         while ($filas = $result->fetch(PDO::FETCH_ASSOC)) {

@@ -25,7 +25,7 @@
 
     <a type="button" class="btn btn-outline-dark border-0 mx-2 btn-lg" href="http://localhost/CarniceriaWeb/cart.php">
         <?php $x = 0; ?>
-        <i class="fa fa-shopping-cart" value= <?php echo $x ?>></i>
+        <i id="cartIcon" class="fa fa-shopping-cart" value= <?php echo $x ?>></i>
     </a>
 
     <button type="button" class="btn btn-outline-dark border-0 btn-lg dropdown">
@@ -55,6 +55,7 @@
 
   </div>
 </nav>
+<br><br>
 
 </body>
 </html>
