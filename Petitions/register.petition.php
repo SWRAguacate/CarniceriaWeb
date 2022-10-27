@@ -10,7 +10,6 @@ if(isset($_POST["petition"])) {
     $contra = $_POST["contra"];
     $telefono = $_POST["telefono"];
         
-    $_usuario = new usuario_model();
     $user = $_usuario->validateUser($usuario, $email);
         
     if (Count($user) == 0) {

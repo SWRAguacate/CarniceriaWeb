@@ -23,18 +23,12 @@
 
     <a type="button" class="btn btn-outline-dark border-0 mx-2 btn-lg" href="index.php">Inicio</a>
 
-    <button type="button" class="btn btn-outline-dark border-0 mx-2 btn-lg" routerLink="/cart">
-        <?php 
-            $x = 1;
-            if($x != 0) { 
-        ?>
-            <i class="fa fa-shopping-cart" value= <?php echo $x ?>></i>
-        <?php } else { ?>
-            <i class="fa">&#xf07a;</i>
-        <?php } ?>
-    </button>
+    <a type="button" class="btn btn-outline-dark border-0 mx-2 btn-lg" href="http://localhost/CarniceriaWeb/cart.php">
+        <?php $x = 0; ?>
+        <i class="fa fa-shopping-cart" value= <?php echo $x ?>></i>
+    </a>
 
-    <button type="button" class="btn btn-outline-dark border-0 btn-lg dropdown" routerLink="/users" (click)="goUser()">
+    <button type="button" class="btn btn-outline-dark border-0 btn-lg dropdown">
       <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="fa fa-user" aria-hidden="true"></i>
       </a>

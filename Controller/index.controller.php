@@ -1,7 +1,9 @@
 <?php
 
-// require_once ("Model/usuario_model.php");
-// require_once ("Model/busqueda_avanzada_model.php");
+require_once ("Model/product.model.php");
+
+$_product = new product_model();
+$products = $_product->getProducts();
 
 $usuario = null;
 session_start();

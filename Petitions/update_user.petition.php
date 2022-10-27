@@ -13,7 +13,6 @@ if(isset($_POST["petition"])) {
     $contra = $_POST["contra"];
     $telefono = $_POST["telefono"];
         
-    $_usuario = new usuario_model();
     if($usuarioOriginal != $usuario){
         $usrParam = $usuario;
     } else {

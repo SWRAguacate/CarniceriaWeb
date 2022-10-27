@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-    <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
     <script src="./JS/profile.js"></script>
     <title>Editar Usuario</title>
 </head>
@@ -38,7 +34,7 @@
             <label class="form-label" for="contra2">Confirmar contraseña</label>
             <input type="password" id="contra2" name="contra2" class="form-control" />
 
-            <label class="form-label" for="telefono">Teléfono</label>
+            <label class="form-label" for="telefono">Teléfono a 10 dígitos</label>
             <input type="text" id="telefono" name="telefono" value="<?php echo $telefono ?>" class="form-control" />
             </div>
 
