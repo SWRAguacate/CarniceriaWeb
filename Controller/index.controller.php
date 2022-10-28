@@ -16,11 +16,11 @@ $usuario = null;
 $carrito = null;
 $searchedProducts = null;
 $cantidad_total = 0;
+$id_usuario = 0;
 session_start();
 if(isset($_SESSION["usuario_logueado"])) {
     $usuario = $_SESSION["usuario_logueado"];
 
-    $id_usuario;
     foreach ($usuario as $renglon) { foreach ($renglon as $columna => $valor) { 
         if ($columna == "id_usuario" && $valor != null) {  $id_usuario = $valor; }
     } }

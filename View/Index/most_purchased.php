@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./JS/index.js"></script>
     <title>Most Purchased</title>
 </head>
 <body>
-
+<input type="text" id="id_usuario" value="<?php echo $id_usuario ?>" hidden>
 <h2 class="me-5 ms-5 mt-5">Lo más vendido</h2>
-<div class="row row-cols-1 row-cols-md-3 g-4 me-5 ms-5 mb-5">
+<div class="row row-cols-1 row-cols-md-3 g-4 me-5 ms-5 mb-5" id="zona6">
   
 <?php 
           foreach ($mostPurchasedProducts as $renglon) 
