@@ -115,21 +115,36 @@
                           <?php } ?>
                         </div>
                       </div>
-                      <div class="d-flex flex-row align-items-center">
-                        <div class="me-2 ms-2">
-                          <?php if($tipo == 1) { ?>
-                            <h5 class="fw-normal mb-0"><?php echo $kilos ?>kg: </h5>
-                          <?php } else { ?>
-                            <h5 class="fw-normal mb-0"><?php echo $unidades ?> unidades: </h5>
-                          <?php } ?>
-                        </div>
-                        <div style="width: 80px;">
-                          <h5 class="mb-0">$<?php echo $precio_final ?></h5>
-                        </div>
-                        <button name="btnDeleteProductCart" class="btn fas fa-trash-alt" style="color: #cecece;">
+
+                      <div class="input-group" name="divInfo" style="margin: auto;">
+                      <input type="text" name="id_producto_carrito" value="<?php echo $id_producto_carrito ?>" hidden>
+                      <input type="text" name="tipo" value="<?php echo $tipo ?>" hidden>
+                      <input type="text" name="precio_unitario" value="<?php echo $precio_unitario ?>" hidden>
+                      <input type="text" name="descuento" value="<?php echo $descuento ?>" hidden>
+
+                      <?php if($tipo == 1) { ?>
+
+                        <span id="spanKilos" style="height: 65px;" class="input-group-text" id="inputGroup-sizing-sm">Kilos</span>
+                        <input type="number" name="kilos" style="height: 65px;" class="form-control" step="0.1"  min="0.1" max="999.99" 
+                        value="<?php echo $kilos ?>" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+
+                        <?php } else { ?>
+
+                        <span id="spanUnidades" style="height: 65px;" class="input-group-text" id="inputGroup-sizing-sm">Unidades</span>
+                        <input type="number" name="unidades" style="height: 65px;" class="form-control" min="1" step="1" 
+                        value="<?php echo $unidades ?>" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+
+                        <?php } ?>
+
+                        <span id="spanPrecioFinal" style="height: 65px;" class="input-group-text" id="inputGroup-sizing-sm">Precio final</span>
+                        <input type="text" value="<?php echo $precio_final ?>" name="precioFinal" style="height: 65px;" class="form-control" 
+                        readonly aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+
+                        <button name="btnDeleteProductCart" class="btn fas fa-trash-alt" style="color: red;">
                           <input type="text" id="id_producto_carrito" value="<?php echo $id_producto_carrito ?>" hidden>
                         </button>
                       </div>
+
                     </div>
                   </div>
                 </div>
@@ -201,7 +216,7 @@
                     <button type="button" id="btnPagarCarrito" class="btn btn-info btn-block btn-lg">
                       <div class="d-flex justify-content-between">
                         <span>Pagar <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
-                        <span> $<?php echo $precio_con_descuentos ?></span>
+                        <span id="spanpcd"> $<?php echo $precio_con_descuentos ?></span>
                       </div>
                     </button>
                     <input type="text" id="pcd" value="<?php echo $precio_con_descuentos ?>" hidden>

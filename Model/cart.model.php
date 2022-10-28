@@ -55,10 +55,10 @@ class cart_model {
 
     public function updateCartItem($id_producto_carrito, $unidades, $kilos, $precio_final) {
         $sql = "update producto_carrito set "
-        . "unidades = IFNULL (:unidades, unidades),"
-        . "kilos = IFNULL (:kilos, kilos)," 
-        . "precio_final = (:precio_final, precio_final) "
-        . "where id_producto_carrito = :id_producto_carrito and estatus = 0";
+        . "unidades = :unidades,"
+        . "kilos = :kilos," 
+        . "precio_final = :precio_final "
+        . "where id_producto_carrito = :id_producto_carrito";
         $result = $this->db->prepare($sql);
         $result->execute(array(":unidades" => $unidades, ":kilos" => $kilos, ":precio_final" => $precio_final, ":id_producto_carrito" => $id_producto_carrito));
     }

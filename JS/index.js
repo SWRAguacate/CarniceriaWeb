@@ -8,41 +8,43 @@ $(document).ready(function() {
     }
 
     $('#btnOnboarding').click(function(){
-        introJs().setOptions({
+        introJs().setOptions({ 
+            'nextLabel': 'Siguiente',
+            'prevLabel': 'Anterior',
             steps: [{
-              title: 'Bienvenido',
-              intro: '!Empecemos con este breve tutorial! 👋'
-            },
-            {
-              element: document.querySelector('#zona1'),
-              intro: 'Esta es nuestra barra de navegación'
-            },
-            {
-              title: '!Regresa!',
-              element: document.querySelector('#zona2'),
-              intro: 'Con este botón siempre podremos regresar al inicio'
-            },
-            {
-                title: '!Anímate!',
-                element: document.querySelector('#zona3'),
-                intro: 'Este botón corresponde al carrito, solo necesitas registrarte o iniciar sesión para ir a su destino'
-            },
-            {
-                title: '!Verifica!',
-                element: document.querySelector('#zona4'),
-                intro: 'Con este botón desplegaremos diferentes opciones, en las cuales podrás ir a la página para iniciar sesión, registrarte, y aún más al estar logueados'
-            },
-            {
-                title: 'Busca',
-                element: document.querySelector('#zona5'),
-                intro: 'Así como la búsqueda de la navegación por nombre, también puedes buscar productos por categorías'
-            },
-            {
-                title: 'Observa',
-                element: document.querySelector('#zona6'),
-                intro: 'De aquí en adelante podrás encontrar productos de tu interés'
-            }]
-          }).start();
+                title: 'Bienvenido',
+                intro: '!Empecemos con este breve tutorial! 👋'
+              },
+              {
+                element: document.querySelector('#zona1'),
+                intro: 'Esta es nuestra barra de navegación'
+              },
+              {
+                title: '!Regresa!',
+                element: document.querySelector('#zona2'),
+                intro: 'Con este botón siempre podremos regresar al inicio'
+              },
+              {
+                  title: '!Anímate!',
+                  element: document.querySelector('#zona3'),
+                  intro: 'Este botón corresponde al carrito (Se requiere iniciar sesión para desbloquearlo)'
+              },
+              {
+                  title: '!Verifica!',
+                  element: document.querySelector('#zona4'),
+                  intro: 'Con este botón desplegaremos diferentes opciones, en las cuales podrás ir a la página para iniciar sesión, registrarte, consultar tu perfil, etc.'
+              },
+              {
+                  title: 'Busca',
+                  element: document.querySelector('#zona5'),
+                  intro: 'Así como la búsqueda por nombre de la navegación, también puedes buscar productos por categorías'
+              },
+              {
+                  title: 'Observa',
+                  element: document.querySelector('#zona6'),
+                  intro: 'De aquí en adelante podrás encontrar productos de tu interés'
+              }]
+        }).start();
     })
 
     $("#unidades").bind('keyup mouseup', function () {
