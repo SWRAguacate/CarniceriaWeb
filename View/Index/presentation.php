@@ -17,28 +17,32 @@
       <div class="row pt-5 pb-5">
         <div class="col">
           <div class="input-group">
-            <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
-            <input type="text" class="form-control" id="nameSearch" aria-label="Sizing example input"
-              aria-describedby="inputGroup-sizing-sm">
-          </div>
-        </div>
-        <div class="col">
-          <div class="input-group">
-            <span class="input-group-text" id="inputGroup-sizing-sm">Descripcion</span>
-            <input type="text" class="form-control" id="descSearch" aria-label="Sizing example input"
-              aria-describedby="inputGroup-sizing-sm">
-          </div>
-        </div>
-        <div class="col">
-          <div class="input-group">
             <span class="input-group-text">Categoría</span>
             <select class="form-select" id="categorieSelect">
-              <option value="" selected>...</option>
+            <?php
+                foreach ($categories as $renglon) 
+                {
+                  $nombreCat; $id_categoria;
+                  foreach ($renglon as $columna => $valor) 
+                  { 
+                    if ($columna == "nombre") 
+                    {
+                      $nombreCat = $valor; 
+                    }
+                    
+                    if ($columna == "id_categoria") 
+                    {
+                      $id_categoria = $valor;
+                    }
+                  }
+            ?>
+              <option value="<?php echo $id_categoria ?>"><?php echo $nombreCat ?></option>
+            <?php } ?>
             </select>
           </div>
         </div>
         <div class="col">
-          <button class="btn btn-danger"> Buscar </button>
+          <button id="btnSearchCat" class="btn btn-danger"> Buscar </button>
         </div>
       </div>
     </div>

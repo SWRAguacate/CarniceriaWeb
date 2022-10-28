@@ -11,7 +11,6 @@ $(document).ready(function() {
                 contra: $('#contra').val()
             },
             success: function(result){
-                console.log(result);
                 if(result == 1){
                     toastr.success('Usuario logueado');
                     alert('Usuario logueado');

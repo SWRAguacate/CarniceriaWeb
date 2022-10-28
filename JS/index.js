@@ -1,5 +1,6 @@
 $(document).ready(function() {
     const Url = './Petitions/add_to_cart.petition.php';
+    const UrlSearchCat = './Petitions/search_cat.petition.php';
 
     $("#unidades").bind('keyup mouseup', function () {
         var porcentajeDescuento = $('#modal_descuento').val();
@@ -11,7 +12,7 @@ $(document).ready(function() {
         precio_unitario = precio_unitario - descuento;
         var precio_final = precio_unitario * unidades;
 
-        $("#precioFinal").val(precio_final.toString());
+        $('#precioFinal').val(precio_final.toString());
     });
 
     $("#kilos").bind('keyup mouseup', function () {
@@ -24,7 +25,7 @@ $(document).ready(function() {
         precio_unitario = precio_unitario - descuento;
         var precio_final = precio_unitario * kilos;
 
-        $("#precioFinal").val(precio_final.toString());
+        $('#precioFinal').val(precio_final.toString());
     });
 
     $("button[name = 'btnOpenModal']").click(function(event) {
@@ -45,7 +46,7 @@ $(document).ready(function() {
             precio_unitario = precio_unitario - descuento;
             var precio_final = precio_unitario * kilos;
 
-            $("#precioFinal").val(precio_final.toString());
+            $('#precioFinal').val(precio_final.toString());
 
             $('#spanKilos').show();
             $('#kilos').show();
@@ -62,12 +63,37 @@ $(document).ready(function() {
             precio_unitario = precio_unitario - descuento;
             var precio_final = precio_unitario * unidades;
 
-            $("#precioFinal").val(precio_final.toString());
+            $('#precioFinal').val(precio_final.toString());
 
             $('#spanUnidades').show();
             $('#unidades').show();
             $('#spanKilos').hide();
             $('#kilos').hide();
+        }
+    });
+
+    $('#btnSearchCat').click(function() {
+        if($('#categorieSelect').val() != "" && $('#categorieSelect').val() != undefined){
+            $.ajax({
+                url: UrlSearchCat,
+                type: "POST",
+                data: {
+                    petition: 1,
+                    id_categoria: $('#categorieSelect').val()
+                },
+                success: function(result){
+                    if(result == 1){
+                        window.location.href = "http://localhost/CarniceriaWeb/index.php";
+                    } else {
+                        toastr.error('Error en la petición');
+                    }
+                },
+                error: function(error){
+                    console.log(error);
+                }
+            });
+        } else {
+            toastr.waring('Seleccione una categoria');
         }
     });
     
@@ -81,7 +107,7 @@ $(document).ready(function() {
             unidades = parseInt($('#unidades').val());
         }
 
-        $("#cartIcon").attr("value", (parseInt($( "#cartIcon" ).attr("value")) + 1));
+        $('#cartIcon').attr("value", (parseInt($('#cartIcon').attr("value")) + 1));
         
         $.ajax({
             url: Url,
@@ -95,7 +121,6 @@ $(document).ready(function() {
                 precio_final: parseFloat($('#precioFinal').val())
             },
             success: function(result){
-                console.log(result);
                 if(result == 1){
                     toastr.success('Producto agregado al carrito');
                 } else {

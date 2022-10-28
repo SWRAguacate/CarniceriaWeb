@@ -15,7 +15,6 @@ $(document).ready(function() {
                     telefono: $('#telefono').val()
                 },
                 success: function(result){
-                    console.log(result);
                     if(result == 1){
                         toastr.success('Usuario registrado');
                         alert('Usuario registrado');

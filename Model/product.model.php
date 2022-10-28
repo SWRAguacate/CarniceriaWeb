@@ -22,6 +22,39 @@ class product_model {
         return $this->products_model;
     }
 
+    public function searchProductsByName($nombre) {
+        $this->products_model = array();
+        $sql = "select * FROM producto where nombre like '%".$nombre."%' or nombre like '%".$nombre."' or nombre like '".$nombre."'";
+        $result = $this->db->prepare($sql);
+        $result->execute();
+        while ($filas = $result->fetch(PDO::FETCH_ASSOC)) {
+            $this->products_model[] = $filas;
+        }
+        return $this->products_model;
+    }
+
+    public function searchProductsByCat($id_categoria) {
+        $this->products_model = array();
+        $sql = "select * FROM producto where id_categoria = :id_categoria";
+        $result = $this->db->prepare($sql);
+        $result->execute(array(":id_categoria" => $id_categoria));
+        while ($filas = $result->fetch(PDO::FETCH_ASSOC)) {
+            $this->products_model[] = $filas;
+        }
+        return $this->products_model;
+    }
+
+    public function getCategories() {
+        $this->products_model = array();
+        $sql = "select * from categoria";
+        $result = $this->db->prepare($sql);
+        $result->execute();
+        while ($filas = $result->fetch(PDO::FETCH_ASSOC)) {
+            $this->products_model[] = $filas;
+        }
+        return $this->products_model;
+    }
+
     public function getBestOffers() {
         $this->products_model = array();
         $sql = "select * from producto order by descuento desc limit 3";

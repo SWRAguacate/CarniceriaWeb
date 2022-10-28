@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
     <link href="./CSS/index.style.css" rel="stylesheet">
+    <script src="./JS/nav.js"></script>
     <title>Navbar</title>
 </head>
 <body>
@@ -24,8 +25,7 @@
     <a type="button" class="btn btn-outline-dark border-0 mx-2 btn-lg" href="index.php">Inicio</a>
 
     <a type="button" class="btn btn-outline-dark border-0 mx-2 btn-lg" href="http://localhost/CarniceriaWeb/cart.php">
-        <?php $x = 0; ?>
-        <i id="cartIcon" class="fa fa-shopping-cart" value= <?php echo $x ?>></i>
+      <i id="cartIcon" class="fa fa-shopping-cart" value= <?php echo $cantidad_total ?>></i>
     </a>
 
     <button type="button" class="btn btn-outline-dark border-0 btn-lg dropdown">
@@ -49,8 +49,8 @@
     </button>
 
     <form class="d-flex d-inline-flex mx-2">
-      <input type="search" class="form-control mx-2" id="desc" placeholder="Nombre del producto..." aria-label="Search">
-      <button type="button" class="btn btn-outline-success mx-2" (click)="buscar()">Buscar</button>
+      <input type="search" id="nameSearch" class="form-control mx-2" id="desc" placeholder="Nombre del producto..." aria-label="Search">
+      <button type="button" id="btnSearch" class="btn btn-outline-success mx-2">Buscar</button>
     </form>
 
   </div>

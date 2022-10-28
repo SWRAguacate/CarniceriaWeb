@@ -1,5 +1,6 @@
 <?php
 
+$cantidad_total = 0;
 session_start();
 if(isset($_SESSION["usuario_logueado"])) {
     header('Location: index.php');
